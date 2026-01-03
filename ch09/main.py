@@ -216,3 +216,87 @@ def document_it(func):
 
         return result
     return new_function
+
+def add_ints(a, b):
+    return a + b
+
+add_ints(3, 5)
+
+cooler_add_ints = document_it(add_ints)
+cooler_add_ints(3, 5)
+
+@document_it
+def add_ints(a, b):
+    return a + b
+
+add_ints(3, 5)
+
+cooler_add_ints = document_it(add_ints)
+cooler_add_ints(3, 5)
+
+# Namespaces and Scope
+animal = 'fruitbat'
+def print_global():
+    print('inside print_global:', animal)
+
+print('at the top level:', animal)
+print_global()
+
+# To access the global variable rather than the local one within a function, use global
+
+animal = 'fruitbat'
+def change_and_print_global():
+    global animal
+    animal = 'wombat'
+    print('inside change_and_print_global:', animal)
+
+print(animal)
+change_and_print_global()
+print(animal)
+
+# Uses of _ and __ in names
+
+def amazing():
+    '''
+    This is the amazing function.
+    Want to see it again?
+    '''
+    print('This function is named:', amazing.__name__)
+    print("And its docstring is:", amazing.__doc__)
+
+amazing()
+
+# Recursion
+
+def flatten(lol):
+    for item in lol:
+        if isinstance(item, list):
+            for subitem in flatten(item):
+                yield subitem
+        else:
+            yield item
+
+lol = [1, 2, [3, 4, 5], [6, [7, 8, 9], []]]
+flatten(lol)
+print(list(flatten(lol)))
+
+# Handle errors with try and except
+
+short_list = [1, 2, 3]
+position = 5
+try:
+    short_list[position]
+except:
+    print('Need a position between 0 and', len(short_list)-1, ' but got',
+          position)
+    
+# Make your own exceptions
+
+class UppercaseException(Exception):
+    pass
+
+words = ['eenie', 'meenie', 'miny', 'MO']
+for word in words:
+    if word.isupper():
+        raise UppercaseException(word)
+    
