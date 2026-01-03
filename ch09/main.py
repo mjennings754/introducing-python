@@ -160,3 +160,59 @@ print(type(b))
 
 print(a())
 print(b())
+
+# Anonymous Functions: lambda
+
+def edit_story(words, func):
+    for word in words:
+        print(func(word))
+
+stairs = ['thud', 'meow', 'thud', 'hiss']
+
+def enliven(word):
+    return word.capitalize() + '!'
+
+edit_story(stairs, enliven)
+
+edit_story(stairs, lambda word: word.capitalize() + '!')
+
+# Generators
+
+print(sum(range(1, 101)))
+
+# Generator Functions
+def my_range(first=0, last=10, step=1):
+    number = first
+    while number < last:
+        yield number
+        number += step
+
+print(my_range)
+
+ranger = my_range(1, 5)
+print(ranger)
+
+for x in ranger:
+    print(x)
+
+for try_again in ranger:
+    print(try_again)
+
+genobj = (pair for pair in zip(['a', 'b'], ['1', '2']))
+print(genobj)
+
+for thing in genobj:
+    print(thing)
+
+# Decorators
+
+def document_it(func):
+    def new_function(*args, **kwargs):
+        print('Running function:', func.__name__)
+        print('Positional arguments', args)
+        print('Keyword arguments:', kwargs)
+        result = func(*args, **kwargs)
+        print('Result:', result)
+
+        return result
+    return new_function
