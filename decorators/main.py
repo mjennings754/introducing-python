@@ -25,7 +25,7 @@ def add_ints(a, b):
 add_ints(3, 5)
 
 def christmas_decorator(func):
-    def tinsel(*args, **kwargs):
+    def tinsel(*args):
         print('Using function: ', func.__name__)
         print('Which branch?', args)
         result = func(*args)
