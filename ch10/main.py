@@ -77,3 +77,55 @@ give_me_a_car = Car()
 give_me_a_yugo = Yugo()
 
 give_me_a_yugo.need_a_push()
+
+# Get help from your parent with super()
+
+class Person():
+    def __init__(self, name):
+        self.name = name
+
+class EmailPerson(Person):
+    def __init__(self, name, email):
+        super().__init__(name)
+        self.email = email
+
+# Multiple inheritance
+
+class Animal:
+    def says(self):
+        return 'I speak!'
+    
+class Horse(Animal):
+    def says(self):
+        return 'Neigh!'
+    
+class Donkey(Animal):
+    def says(self):
+        return 'Hee-haw!'
+    
+class Mule(Donkey, Horse):
+    pass
+
+class Hinny(Horse, Donkey):
+    pass
+
+mule = Mule()
+hinny = Hinny()
+print(Mule.mro())
+print(mule.says())
+
+# Mixins
+
+class PrettyMixin():
+    def dump(self):
+        import pprint
+        pprint.pprint(vars(self))
+
+class Thing(PrettyMixin):
+    pass
+t = Thing()
+t.name = "Nyarlathotep"
+t.feature = "ichor"
+t.age = "eldritch"
+
+t.dump()
