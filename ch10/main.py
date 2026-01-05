@@ -129,3 +129,12 @@ t.feature = "ichor"
 t.age = "eldritch"
 
 t.dump()
+
+# Direct Access
+
+class Duck:
+    def __init__(self, input_name):
+        self.name = input_name
+
+fowl = Duck('Daffy')
+print(fowl.name)
