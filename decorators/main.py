@@ -48,3 +48,14 @@ def myfunction():
     return "This should all be uppercase"
 
 print(myfunction())
+
+def makeLowerCase(func):
+    def inner_func():
+        return func().lower()
+    return inner_func
+
+@makeLowerCase
+def lower_function():
+    return "THIS SHOULD ALL BE LOWERCASE"
+
+print(lower_function())
