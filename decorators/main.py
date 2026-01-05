@@ -37,3 +37,14 @@ def add_tinsel(a, b):
     return a + b
 
 add_tinsel(43, 55)
+
+def changecase(func):
+    def myinner():
+        return func().upper()
+    return myinner
+
+@changecase
+def myfunction():
+    return "This should all be uppercase"
+
+print(myfunction())
