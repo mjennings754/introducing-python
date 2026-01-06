@@ -175,3 +175,11 @@ print(don.name)
 don.name = 'Donna'
 print(don.name)
 
+# Properties for Computed Values
+class Circle():
+    def __init__(self, radius):
+        self.radius = radius
+    @property
+    def diameter(self):
+        return 2 * self.radius
+    
