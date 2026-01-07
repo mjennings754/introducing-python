@@ -14,17 +14,17 @@ print(start + start + middle + end)
 
 # Get a character with []
 
-letters = 'abcdefghijklmnopqrstuvwxyxz'
+letters = 'abcdefghijklmnopqrstuvwxyz'
 letters[0]
 letters[-1]
 print(letters[::-1])
 
 # Get a substring with slice
-alpha = 'abcdefghijklmnopqrstuvwxyxz'
+alpha = 'abcdefghijklmnopqrstuvwxyz'
 print(alpha[:])
 print(alpha[20:])
 print(alpha[10:])
-print(alpha[:21:5])
+print(alpha[21:5])
 
 # Get length with len()
 

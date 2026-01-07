@@ -183,3 +183,9 @@ class Circle():
     def diameter(self):
         return 2 * self.radius
     
+# Static methods
+class CoyoteWeapon():
+    @staticmethod
+    def commercial():
+        print('This CoyoteWeapon has been brought to you by Acme')
+

@@ -65,3 +65,8 @@ print(5.0)
 print(05.0)
 
 print(5e0)
+
+# Reassign a value to a variable
+a = 95
+temp = a - 3
+a = temp

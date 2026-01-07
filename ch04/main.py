@@ -5,6 +5,9 @@ if disaster:
 else:
     print("Whee!")
 
+# String
+str(98.6)
+
 # Logical operators
 x = 7
 print(5 < x and x < 10)
