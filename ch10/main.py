@@ -216,3 +216,12 @@ easy_a = A()
 breezy_a = A()
 wheezy_a = A()
 A.kids()
+
+# Static methods
+
+class CoyoteWeapon():
+    @staticmethod
+    def commercial():
+        print("This CoyoteWeapon has been brought to you by Acme")
+
+CoyoteWeapon.commercial()
