@@ -225,3 +225,24 @@ class CoyoteWeapon():
         print("This CoyoteWeapon has been brought to you by Acme")
 
 CoyoteWeapon.commercial()
+
+# Duck Typing
+class Quote():
+     def __init__(self, person, words):
+         self.person = person
+         self.words = words
+     def who(self):
+         return self.person
+     def says(self):
+         return self.words + '.'
+         
+class QuestionQuote(Quote):
+     def says(self):
+         return self.words + '?'
+              
+class ExclamationQuote(Quote):
+     def says(self):
+         return self.words + '!'
+     
+hunter = Quote('Elmer Fudd', "I'm hunting wabbits")
+print(hunter.who(), 'says:', hunter.says())
