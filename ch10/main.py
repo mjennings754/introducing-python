@@ -246,3 +246,60 @@ class ExclamationQuote(Quote):
      
 hunter = Quote('Elmer Fudd', "I'm hunting wabbits")
 print(hunter.who(), 'says:', hunter.says())
+
+# Magic methods 
+
+class Word():
+    def __init__(self, text):
+        self.text = text
+
+    def equals(self, word2):
+        return self.text.lower() == word2.text.lower()
+    
+# Aggregation and Composition
+class Bill():
+    def __init__(self, description):
+        self.description = description
+
+class Tail():
+    def __init__(self, length):
+        self.length = length
+    
+class Duck():
+    def __init__(self, bill, tail):
+        self.bill = bill
+        self.tail = tail
+    def about(self):
+        print('This duck has a', self.bill.description,
+              'bill and a', self.tail.length, 'tail')
+        
+a_tail = Tail('long')
+a_bill = Tail('wide orange')
+duck = Duck(a_bill, a_tail)
+#duck.about()
+
+from collections import namedtuple
+Duck = namedtuple('Duck', 'bill tail')
+duck = Duck('wide orange', 'long')
+print(duck)
+
+parts = {'bill': 'wide orange', 'tail': 'long'}
+duck2 = Duck(**parts)
+print(duck2)
+
+duck2 = Duck(bill = 'wide orange', tail = 'long')
+
+class TinyClass():
+    def __init__(self, name):
+        self.name = name
+
+tiny = TinyClass('tiny')
+print(tiny.name)
+
+from dataclasses import dataclass
+@dataclass
+class TinyDataClass:
+    name: str
+
+tiny = TinyDataClass('tiny')
+print(tiny.name)
