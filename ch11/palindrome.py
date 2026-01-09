@@ -7,3 +7,4 @@ def palindrome(word):
     return True
 
 print(palindrome('a'))
+

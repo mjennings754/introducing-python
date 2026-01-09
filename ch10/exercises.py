@@ -187,7 +187,7 @@ My smartphone, to %s.''' % (
 robbie = Robot()
 print(robbie.does())
 
-    
+
 
     
 
