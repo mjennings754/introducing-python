@@ -12,3 +12,12 @@ print(len(poem))
 fout = open('relativity', 'wt')
 fout.write(poem)
 fout.close()
+
+fout = open('relativity', 'wt')
+print(poem, file=fout)
+fout.close()
+
+fin = open('relativity', 'rt')
+poem = fin.read()
+fin.close()
+len(poem)
