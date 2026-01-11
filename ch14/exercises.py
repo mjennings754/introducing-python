@@ -24,3 +24,4 @@ with open('test.txt', 'rt') as file:
     test2 = file.read()
 
 print(test1 == test2)
+
